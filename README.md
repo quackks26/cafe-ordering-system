@@ -1,4 +1,10 @@
-Cafe Ordering Application System
+Group number: 3
+Group members:
+Nur Ateeqah binti Ismail (B20250311),
+Nur Amal Wajihah binti Abd. Siedi (B20250346),
+Amal Rif'ah binti Juffri (B20250313)
+
+Cafe Ordering Application System:
 A database-driven web application designed to streamline cafe operations which allow customers to browse menu,
 place order and checkout and at the same time provides administrative functionality such as track, review
 and update order statuses.
