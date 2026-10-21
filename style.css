@@ -1,0 +1,655 @@
+
+/* Brewing Cafe - shared website styling */
+
+:root {
+    --cream: #faf5eb;
+    --white: #fffdf8;
+    --brown: #563b2d;
+    --dark-brown: #35251e;
+    --caramel: #b77b4b;
+    --muted: #84766b;
+    --border: #e9ddce;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--dark-brown);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    min-height: 76px;
+    padding: 18px 7%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--brown);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+}
+
+.navbar a {
+    color: var(--brown);
+    font-size: 0.95rem;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--caramel);
+}
+
+.hero {
+    min-height: 340px;
+    padding: 76px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #f0e0ca, #fbf5eb);
+}
+
+.eyebrow {
+    color: var(--caramel);
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 12px 0;
+    color: var(--brown);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+}
+
+.tagline {
+    margin: 16px 0 28px;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--brown);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: var(--caramel);
+}
+
+.popular {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 65px;
+    text-align: center;
+}
+
+.popular h2 {
+    margin: 0;
+    color: var(--brown);
+    font-size: 2rem;
+}
+
+.section-description {
+    margin: 8px 0 28px;
+    color: var(--muted);
+}
+
+.drink-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.drink-card {
+    padding: 18px 18px 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 5px 16px #563b2d0a;
+}
+
+.drink-art {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 4rem;
+}
+
+.matcha-art {
+    background: #e8edda;
+}
+
+.coffee-art {
+    background: #efe0d2;
+}
+
+.lemonade-art {
+    background: #f8edc9;
+}
+
+.drink-card h3 {
+    margin: 18px 0 4px;
+    color: var(--brown);
+    font-size: 1.08rem;
+}
+
+.price {
+    margin: 4px 0 16px;
+    color: var(--caramel);
+    font-weight: bold;
+}
+
+.btn-small {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+}
+
+.site-footer {
+    padding: 24px 16px;
+    background: var(--dark-brown);
+    color: #fff8ef;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+.site-footer p {
+    margin: 4px 0;
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-direction: column;
+        padding: 18px 16px;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 60px 18px;
+    }
+
+    .drink-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popular {
+        padding: 36px 18px 48px;
+    }
+}
+
+/* Menu and checkout page headings */
+.menu-heading {
+    padding: 45px 20px 25px;
+    text-align: center;
+}
+
+.menu-heading h1 {
+    margin: 8px 0;
+    color: var(--brown);
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Menu category buttons */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.category-btn {
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: var(--white);
+    color: var(--brown);
+    cursor: pointer;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: var(--brown);
+    color: white;
+}
+
+/* Menu and checkout containers */
+.menu-section,
+.checkout-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.order-summary,
+.checkout-form-section {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    min-width: 0;
+}
+
+.order-summary h2,
+.checkout-form-section h2 {
+    color: var(--brown);
+}
+
+.checkout-form-section label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+}
+
+.checkout-form-section input,
+.checkout-form-section select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: white;
+    font: inherit;
+}
+
+.checkout-form-section input:focus,
+.checkout-form-section select:focus {
+    outline: 2px solid var(--caramel);
+    outline-offset: 2px;
+}
+
+.cart-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 10px 0;
+}
+
+.quantity-controls button {
+    min-width: 32px;
+    min-height: 32px;
+    cursor: pointer;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 2px solid var(--border);
+}
+
+.place-order-btn {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.place-order-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#orderMessage {
+    overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 18px;
+    }
+
+    .order-summary,
+    .checkout-form-section {
+        padding: 18px;
+    }
+
+    .menu-section {
+        padding: 16px;
+    }
+
+    .category-buttons {
+        gap: 8px;
+    }
+}
+
+
+
+
+// ADMIN ORDER PAGE
+
+.orders-page {
+    min-height: 70vh;
+}
+
+.admin-orders {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+}
+
+.admin-order-card {
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 5px 16px #563b2d0a;
+}
+
+.order-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.order-heading h2 {
+    margin: 0;
+    color: var(--brown);
+}
+
+.order-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #efe0d2;
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.order-details {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.order-details p {
+    margin: 6px 0;
+}
+
+.order-items {
+    margin: 12px 0;
+}
+
+.admin-order-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 7px 0;
+}
+
+.admin-order-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 2px solid var(--border);
+    color: var(--brown);
+}
+
+.no-orders {
+    padding: 30px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+}
+
+
+// mobile admin orders
+
+@media (max-width: 700px) {
+
+    .admin-orders {
+        padding: 0 16px 40px;
+    }
+
+    .admin-order-card {
+        padding: 18px;
+    }
+
+    .order-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+// Admin order status form
+
+.status-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-form select {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: white;
+    color: var(--brown);
+    font: inherit;
+}
+
+@media (max-width: 700px) {
+
+    .status-form {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .status-form .btn {
+        width: 100%;
+    }
+}
+
+
+//   ADMIN MENU MANAGEMENT
+
+.manage-menu-page {
+    min-height: 70vh;
+}
+
+.admin-menu-section {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+}
+
+.admin-menu-section h2 {
+    margin-top: 0;
+    color: var(--brown);
+}
+
+.admin-menu-form {
+    display: grid;
+    gap: 16px;
+}
+
+.admin-menu-form .form-group {
+    display: grid;
+    gap: 6px;
+}
+
+.admin-menu-form input,
+.admin-menu-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font: inherit;
+}
+
+.admin-menu-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-menu-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-menu-table th,
+.admin-menu-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.admin-menu-table th {
+    color: var(--brown);
+}
+
+.available {
+    font-weight: bold;
+}
+
+.unavailable {
+    opacity: 0.6;
+    font-weight: bold;
+}
+
+.admin-message {
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #eef6ec;
+}
+
+.admin-error {
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #f8e8e8;
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-menu-section {
+        margin: 0 16px 30px;
+        padding: 18px;
+    }
+}
+
+.edit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.menu-actions form {
+    margin: 0;
+}
+
+.btn-danger {
+    border: none;
+    cursor: pointer;
+}
+
+
+// ADMIN REPORTS
+
+.reports-page {
+    min-height: 70vh;
+}
+
+.report-summary {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 0 24px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(150px, 1fr));
+
+    gap: 16px;
+}
+
+.report-card {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    text-align: center;
+}
+
+.report-card h2 {
+    margin: 0 0 6px;
+    color: var(--brown);
+}
+
+.report-card p {
+    margin: 0;
+}
+
+
+@media (max-width: 700px) {
+
+    .report-summary {
+        padding: 0 16px;
+    }
+}
